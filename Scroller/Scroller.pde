@@ -5,7 +5,6 @@ import netP5.*;
 ////color of cursor
 //sync server sends periodic position changes based on server cursor positions
 //loop cursors over fixed area
-//'orchestral score' two different staves
 
 int frmrt = 30;
 int margin = 100;
@@ -14,7 +13,7 @@ OscP5 osc;
 
 void setup() {
   frameRate(frmrt);
-  size(1000+(margin*2), 700);
+  size(1000+(margin*2), 1000);
   spf = 1.0/frmrt;
   osc = new OscP5(this, 12321);
   osc.plug(scrollz, "mk", "/mkscroll");
@@ -23,8 +22,8 @@ void setup() {
   osc.plug(scrollz, "chgtmp", "/chgtmp");
   osc.plug(scrollz, "chgpos", "/chgpos");
   osc.plug(scrollz, "chgdir", "/chgdir");
-  scrollz.mk(0, 100, 20, 1000, 200, 2, 1, 1);
-  scrollz.mk(1, 100, 20, 1000, 200, 2, 0, 0);
+  scrollz.mk(0, 100, 20, 1000, 230, 2, 1, 1, 265, "black", "limegreen");
+  scrollz.mk(1, 100, 265, 1000, 230, 2, 1, 1, 265, "black", "sunshine");
 }
 
 void draw() {
@@ -46,5 +45,4 @@ void keyPressed() {
   if (key=='q')scrollz.chgdir(1, -1);
   if (key=='w')scrollz.chgdir(1, 1);
 }
-
 

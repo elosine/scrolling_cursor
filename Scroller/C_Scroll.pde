@@ -20,6 +20,8 @@ class Scroll {
   // CONSTRUCTOR VARIALBES //
   int ix, x, y, w, h;
   int nstaves;
+  int gap;
+  color bgclr, cclr;
   // CLASS VARIABLES //
   int l, t, r, b, m, c;
   boolean bb = true;
@@ -43,13 +45,16 @@ class Scroll {
 
   /// Constructor 1 ///
   Scroll(int aix, int ax, int ay, int aw, int ah, 
-  int anstaves, int bbi, int bmki ) {
+  int anstaves, int bbi, int bmki, int agap, String abgclr, String acclr) {
     ix = aix;
     x = ax;
     y = ay;
     w = aw;
     h = ah;
+    gap = agap;
     nstaves = anstaves;
+    bgclr = clr.get(abgclr);
+    cclr = clr.getAlpha(acclr, 150);
     if (bbi==0)bb=false;
     else bb=true;
     if (bmki==0)bmk=false;
@@ -75,20 +80,20 @@ class Scroll {
     if (bb) {
       for (int i=0; i<nstaves; i++) {
         noStroke();
-        fill(0);
+        fill(bgclr);
         rectMode(CORNER);
-        rect(l, t+( (t+h)*i ), w, h);
+        rect(l, t+( (gap+h)*i ), w, h);
       }
     }
 
     //beat markers
     if (bmk) {
       for (int j=0; j<nstaves; j++) {
-        stroke(255, 128, 0, 80);
+        stroke(255, 128, 0, 55);
         strokeWeight(1);
         for (int i=0; i<numbeats; i++) {
           float bmx = l+(pxperbeat*i);
-          line(bmx, t+( (t+h)*j ), bmx, t+( (t+h)*j )+h );
+          line(bmx, t+( (gap+h)*j ), bmx, t+( (gap+h)*j )+h );
         }
       }
     }
@@ -109,12 +114,14 @@ class Scroll {
       stvnum = (stvnum+1)%nstaves;
     }
     //Cursor
-    stroke(153, 255, 0, 120);
+   // stroke(153, 255, 0, 120);
+   stroke(cclr);
     strokeWeight(3);
-    line(csrx+l, t+( (t+h)*stvnum ), csrx+l, t+( (t+h)*stvnum )+h);
+    line(csrx+l, t+( (gap+h)*stvnum ), csrx+l, t+( (gap+h)*stvnum )+h);
   } //End drw
   //
-  //Change Tempo
+  
+  //Change Tempo Method
   void chgtempo(float abpm) {
     ppf = ( (abpm/60.0)*pxperbeat )/frmrt;
     bpm = abpm;
@@ -134,8 +141,9 @@ class ScrollSet {
 
   // Make Instance Method //
   void mk(int ix, int x, int y, int w, int h, 
-  int anstaves, int bbi, int bmki) {
-    cset.add( new Scroll(ix, x, y, w, h, anstaves, bbi, bmki) );
+  int anstaves, int bbi, int bmki, int gap, String bgclr, String cclr) {
+    cset.add( new Scroll(ix, x, y, w, h, anstaves, bbi, bmki, gap,
+    bgclr, cclr) );
   } //end mk method
 
 
