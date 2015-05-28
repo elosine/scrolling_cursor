@@ -20,23 +20,27 @@ class Notes {
 
   // CONSTRUCTOR VARIALBES //
   int ix, scrnum, stfnum;
-  float beat;
+  float beat, ypos;
   // CLASS VARIABLES //
   int nstaves;
   int gap;
   int h, l, t, r, b, m, c, y1;
-  float x;
+  float x, y;
   int numbeats;
   float pxperbeat = 50.0;
+  float yinc = 10.0;
+  int y0 = 20;
+  
 
   // CONSTRUCTORS //
 
   /// Constructor 1 ///
-  Notes(int aix, int ascrnum, int astfnum, float abeat) {
+  Notes(int aix, int ascrnum, int astfnum, float abeat, float aypos) {
     ix = aix;
     scrnum = ascrnum;
     stfnum = astfnum;
     beat = abeat;
+    ypos = aypos;
     for (int i=scrollz.cset.size ()-1; i>=0; i--) {
       Scroll inst = scrollz.cset.get(i);
       if (inst.ix == scrnum) {
@@ -55,13 +59,21 @@ class Notes {
       }
     }
     y1 =  t+( (gap+h)*stfnum );
+    y = constrain( y1+y0+(ypos*yinc), 0, y1+h );
     x = l+(beat*pxperbeat);
   } //end constructor 1
 
 
   //  DRAW METHOD //
   void drw() {
-    shape(minim, x, y1+100);
+    shapeMode(CENTER);
+   // minim.enableStyle();
+  //  shape(minim, x, y);
+ //   minim.disableStyle();
+  strokeWeight(1);
+  stroke(0);
+    fill(153,255,0);
+    shape(minim, x, y);
   } //End drw
 
 
@@ -123,8 +135,8 @@ class NotesSet {
   ArrayList<Notes> cset = new ArrayList<Notes>();
 
   // Make Instance Method //
-  void mk(int ix, int scrnum, int stfnum, float beat) {
-    cset.add( new Notes(ix, scrnum, stfnum, beat) );
+  void mk(int ix, int scrnum, int stfnum, float beat, float ypos) {
+    cset.add( new Notes(ix, scrnum, stfnum, beat, ypos) );
   } //end mk method
 
 

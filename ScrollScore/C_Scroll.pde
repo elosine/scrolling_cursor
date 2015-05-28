@@ -114,13 +114,13 @@ class Scroll {
       stvnum = (stvnum+1)%nstaves;
     }
     //Cursor
-   // stroke(153, 255, 0, 120);
-   stroke(cclr);
+    // stroke(153, 255, 0, 120);
+    stroke(cclr);
     strokeWeight(3);
     line(csrx+l, t+( (gap+h)*stvnum ), csrx+l, t+( (gap+h)*stvnum )+h);
   } //End drw
   //
-  
+
   //Change Tempo Method
   void chgtempo(float abpm) {
     ppf = ( (abpm/60.0)*pxperbeat )/frmrt;
@@ -142,7 +142,7 @@ class ScrollSet {
   // Make Instance Method //
   void mk(int ix, int x, int y, int w, int h, 
   int anstaves, int bbi, int bmki, int gap, String bgclr, String cclr) {
-    cset.add( new Scroll(ix, x, y, w, h, anstaves, bbi, bmki, gap,
+    cset.add( new Scroll(ix, x, y, w, h, anstaves, bbi, bmki, gap, 
     bgclr, cclr) );
   } //end mk method
 
@@ -167,7 +167,7 @@ class ScrollSet {
 
   // Draw Set Method //
   void drw() {
-    for (int i=0; i<cset.size(); i++) {
+    for (int i=0; i<cset.size (); i++) {
       Scroll inst = cset.get(i);
       inst.drw();
     }
