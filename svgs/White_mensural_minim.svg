@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.1"
+   width="30"
+   height="40"
+   id="svg4464">
+  <defs
+     id="defs4466" />
+  <metadata
+     id="metadata4469">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     transform="translate(-124.40028,-392.82217)"
+     id="layer1">
+    <g
+       transform="matrix(1.9766832,0,0,1.9766832,-91.135667,102.48568)"
+       id="g5265">
+      <g
+         transform="translate(-16.016102,0.11904299)"
+         id="g4212">
+        <g
+           transform="matrix(0.94488636,0,0,0.94488636,7.3400158,-64.364711)"
+           id="g4224">
+          <g
+             transform="translate(-29.306859,0.05183956)"
+             id="g4228">
+            <path
+               d="m 161.65625,234.75781 c 0.39844,-0.54687 0.39844,-0.54687 0.79687,0 l 1.39454,1.91797 c 0.19921,0.26953 0.19921,0.26953 0,0.54688 l -1.39454,1.91796 c -0.39843,0.54688 -0.39843,0.54688 -0.79687,0 l -1.39453,-1.91796 c -0.20313,-0.27735 -0.20313,-0.27735 0,-0.54688 z m -0.043,0.59766 c 0.24219,-0.32422 0.24219,-0.32422 0.55859,0.11328 L 163.28906,237 c 0.16016,0.22266 0.16016,0.22266 0.0391,0.38281 l -0.83593,1.15235 c -0.23828,0.33203 -0.23828,0.33203 -0.5586,-0.10547 l -1.11718,-1.53907 c -0.15625,-0.21484 -0.15625,-0.21484 -0.0391,-0.38281"
+               id="path3907"
+               style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none" />
+            <path
+               d="m 162.05469,234.40626 l 0,-8.96874"
+               id="path3909"
+               style="fill:none;stroke:#000000;stroke-width:0.5479452;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1" />
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
