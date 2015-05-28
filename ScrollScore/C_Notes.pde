@@ -21,6 +21,7 @@ class Notes {
   // CONSTRUCTOR VARIALBES //
   int ix, scrnum, stfnum;
   float beat, ypos;
+  String svgname;
   // CLASS VARIABLES //
   int nstaves;
   int gap;
@@ -30,17 +31,20 @@ class Notes {
   float pxperbeat = 50.0;
   float yinc = 10.0;
   int y0 = 20;
+  PShape noteshape;
   
 
   // CONSTRUCTORS //
 
   /// Constructor 1 ///
-  Notes(int aix, int ascrnum, int astfnum, float abeat, float aypos) {
+  Notes(int aix, int ascrnum, int astfnum, float abeat, float aypos, String asvgname) {
     ix = aix;
     scrnum = ascrnum;
     stfnum = astfnum;
     beat = abeat;
     ypos = aypos;
+    svgname = asvgname;
+    noteshape = svgset[svgnames.get(svgname)];
     for (int i=scrollz.cset.size ()-1; i>=0; i--) {
       Scroll inst = scrollz.cset.get(i);
       if (inst.ix == scrnum) {
@@ -73,7 +77,7 @@ class Notes {
   strokeWeight(1);
   stroke(0);
     fill(153,255,0);
-    shape(minim, x, y);
+    shape(noteshape, x, y);
   } //End drw
 
 
@@ -135,8 +139,8 @@ class NotesSet {
   ArrayList<Notes> cset = new ArrayList<Notes>();
 
   // Make Instance Method //
-  void mk(int ix, int scrnum, int stfnum, float beat, float ypos) {
-    cset.add( new Notes(ix, scrnum, stfnum, beat, ypos) );
+  void mk(int ix, int scrnum, int stfnum, float beat, float ypos, String svgname) {
+    cset.add( new Notes(ix, scrnum, stfnum, beat, ypos, svgname) );
   } //end mk method
 
 
