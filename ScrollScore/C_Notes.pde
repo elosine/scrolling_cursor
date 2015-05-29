@@ -26,13 +26,14 @@ class Notes {
   int nstaves;
   int gap;
   int h, l, t, r, b, m, c, y1;
+  float nl, nt, nr, nb, nm, nw, nh;
   float x, y;
   int numbeats;
   float pxperbeat = 50.0;
   float yinc = 10.0;
   int y0 = 20;
   PShape noteshape;
-  
+
 
   // CONSTRUCTORS //
 
@@ -65,18 +66,24 @@ class Notes {
     y1 =  t+( (gap+h)*stfnum );
     y = constrain( y1+y0+(ypos*yinc), 0, y1+h );
     x = l+(beat*pxperbeat);
+    nw = svgwh[svgnames.get(svgname)][0];
+    nh = svgwh[svgnames.get(svgname)][1];
+    nl =  x-(nw/2.0); 
+    nt =  y-(nh/2.0); 
+    nr =  x+(nw/2.0);
+    nb =  y+(nh/2.0);
   } //end constructor 1
 
 
   //  DRAW METHOD //
   void drw() {
     shapeMode(CENTER);
-   // minim.enableStyle();
-  //  shape(minim, x, y);
- //   minim.disableStyle();
-  strokeWeight(1);
-  stroke(0);
-    fill(153,255,0);
+    // minim.enableStyle();
+    //  shape(minim, x, y);
+    //   minim.disableStyle();
+    // strokeWeight(1);
+    //  stroke(0);
+    // fill(153, 255, 0);
     shape(noteshape, x, y);
   } //End drw
 
@@ -170,23 +177,23 @@ class NotesSet {
     }
   }//end drw method
 
-/*
+  /*
   //// CHANGE METHODS ////
-
-  // Change Method //
-  void chg(int ix, int var) {
-    for (int i=cset.size ()-1; i>=0; i--) {
-      Notes inst = cset.get(i);
-      if (inst.ix == ix) {
-        inst.var = var;
-        //Actions or Calculations Here:
-
-        ///////////////////////////////
-        break;
-      }
-    }
-  } //End chg method
-*/
+   
+   // Change Method //
+   void chg(int ix, int var) {
+   for (int i=cset.size ()-1; i>=0; i--) {
+   Notes inst = cset.get(i);
+   if (inst.ix == ix) {
+   inst.var = var;
+   //Actions or Calculations Here:
+   
+   ///////////////////////////////
+   break;
+   }
+   }
+   } //End chg method
+   */
 
   //// MOUSE METHODS ////
 
@@ -266,6 +273,4 @@ class NotesSet {
   //
   //
 } // END CLASS SET CLASS
-
-
 

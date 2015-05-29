@@ -28,7 +28,7 @@ class Scroll {
   boolean bmk = true;
 
   float bpm = 120.0;
-  int numbeats = 20;
+  int numbeats = 16;
   float pxperbeat = 50.0;
   float csrx = 0;
   int stfht = 150;
@@ -67,6 +67,7 @@ class Scroll {
     b = t+h;
     m = l + round(w/2.0);
     c = t + round(h/2.0);
+    pxperbeat = w/numbeats;
 
     bps = bpm/60.0;
     pps = bps*pxperbeat;
