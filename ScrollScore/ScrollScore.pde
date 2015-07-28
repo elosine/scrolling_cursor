@@ -1,6 +1,27 @@
 import oscP5.*;
 import netP5.*;
 
+
+//TURN THIS INTERFACE INTO THE CONTROLER
+//// Fixed 8thnote pulse at unison
+////// Middle line and a certian color notehead with instructions
+////// given to performers to play a designated pitch
+
+//// TUPLET INTERJECTIONS
+//////  Way to save and recall cycles
+
+//// IMPROV INTERJECTIONS
+
+//// CHANGE PITCH
+
+//// CURSOR ACCEL DECEL
+///// ACCELERATE GRADUALLY (MANUALLY) UNTIL CATCHES UP AND THEN LOCKS NEW TEMPO
+
+//// ACCENTS/DYNAMICS/EXTENDED TECHNIQUES
+
+//// LIVE-ELECTRONICS
+
+
 //Fix Tups
 ////option for no label
 ////option for single number
