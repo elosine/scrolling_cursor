@@ -4,6 +4,11 @@ import netP5.*;
 
 //TURN THIS INTERFACE INTO THE CONTROLER
 //// Fixed 8thnote pulse at unison
+//////// Status window
+
+
+//TURN THIS INTERFACE INTO THE CONTROLER
+//// Fixed 8thnote pulse at unison
 ////// Middle line and a certian color notehead with instructions
 ////// given to performers to play a designated pitch
 
@@ -18,6 +23,7 @@ import netP5.*;
 ///// ACCELERATE GRADUALLY (MANUALLY) UNTIL CATCHES UP AND THEN LOCKS NEW TEMPO
 
 //// ACCENTS/DYNAMICS/EXTENDED TECHNIQUES
+////// Accent Cycle
 
 //// LIVE-ELECTRONICS
 
